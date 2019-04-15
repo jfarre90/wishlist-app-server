@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 mongoose.set('debug', true);
 
 mongoose.Promise = Promise;
-mongoose.connect('mongodb://localhost/wishlist', {
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/wishlist', {
     useNewUrlParser: true,
     keepAlive: true
 });
